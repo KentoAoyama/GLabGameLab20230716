@@ -26,17 +26,42 @@ public class GoldFishController : MonoBehaviour
     [SerializeField]
     private Transform _moveTransform;
 
-    private float _currentMoveSpeed = 0f;
+    [SerializeField]
+    private Animator _anim;
+
+    [SerializeField]
+    private AudioSource _audioSource;
+
+    [SerializeField]
+    private AudioClip _eat;
+
+    public float _currentMoveSpeed = 0f;
 
     private Vector2 _currentVeclocity = default;
 
+    private InGameController _controller = default;
+
+
     void Start()
     {
-        
+        _controller = FindObjectOfType<InGameController>().GetComponent<InGameController>();
     }
 
     void Update()
     {
+        if (_controller != null)
+        {
+            if (_controller.State != InGameController.InGameState.Game)
+            {
+                _rb.Sleep();
+                return;
+            }
+            else
+            {
+                _rb.WakeUp();
+            }
+        }
+
         float deltaTime = Time.deltaTime;
 
         Vector2 input = GetInput();
@@ -45,7 +70,7 @@ public class GoldFishController : MonoBehaviour
         if (input != Vector2.zero)
         {
             var velocity = Vector2.up * input.y + Vector2.right * input.x;
-            velocity = _moveSpeed * deltaTime * velocity.normalized;
+            velocity = _moveSpeed * velocity.normalized;
 
             //à⁄ìÆÇÃë¨ìxÇãÖñ ê¸å`ï‚ä‘Ç∑ÇÈ
             _currentMoveSpeed += deltaTime / _moveAcceleration;
@@ -53,6 +78,7 @@ public class GoldFishController : MonoBehaviour
             velocity = Vector3.Slerp(Vector2.zero, velocity, _currentMoveSpeed);
 
             _rb.velocity = velocity;
+            _currentVeclocity = velocity;
         }
         else
         {
@@ -68,10 +94,21 @@ public class GoldFishController : MonoBehaviour
             Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
             _rb.MoveRotation(Mathf.LerpAngle(_rb.rotation, targetRotation.eulerAngles.z, _rotationSpeed * Time.deltaTime));
         }
+
+        _anim?.SetFloat("Input", input.sqrMagnitude);
     }
 
     private Vector2 GetInput()
     {
         return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Insect"))
+        {
+            _audioSource.clip = _eat;
+            _audioSource.Play();
+        }
     }
 }

@@ -45,16 +45,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlurStrength: 2.05
+    - _BlurStrength: 0.71
     - _EnableExternalAlpha: 0
     - _Range: 0.06
-    - _Scale: 9.37
-    - _ScrollSpeed: 0.28
+    - _Scale: 18.88
+    - _ScrollSpeed: 0.6
     m_Colors:
     - _BlurDir: {r: 1, g: 1, b: 0, a: -0.28}
     - _Color: {r: 0.031772893, g: 0.16686687, b: 0.9622641, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ScrollDir: {r: 1, g: 1, b: 0, a: 0}
-    - _ShinessColor: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+    - _ShinessColor: {r: 0.016387494, g: 1.087124, b: 1.2407722, a: 0.62352943}
   m_BuildTextureStacks: []
