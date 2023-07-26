@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1289705443}
     m_Modifications:
+    - target: {fileID: -6974726419081924773, guid: 403a83e64275bd44bb522412db8ace5e, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5196028461440299472, guid: 403a83e64275bd44bb522412db8ace5e, type: 3}
       propertyPath: m_Name
       value: Poi
@@ -1236,6 +1240,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1360468258967982670, guid: d438c2d636fedc049b8c23761b3cfd6d, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2421661207869244787, guid: d438c2d636fedc049b8c23761b3cfd6d, type: 3}
       propertyPath: m_Name
       value: Goldfish
@@ -1852,6 +1860,10 @@ PrefabInstance:
       propertyPath: _rotationSpeed
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 1360468258967982670, guid: d438c2d636fedc049b8c23761b3cfd6d, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2421661207869244787, guid: d438c2d636fedc049b8c23761b3cfd6d, type: 3}
       propertyPath: m_Name
       value: Goldfish (1)
@@ -2038,7 +2050,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1b2e8eaae9204964ab9351f7f399ced9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2716,6 +2728,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 6888329981227388890, guid: 8fb6c6d4790e65f4e985db2be0f1c405, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8854082902170024267, guid: 8fb6c6d4790e65f4e985db2be0f1c405, type: 3}
       propertyPath: m_RootOrder
       value: 1
